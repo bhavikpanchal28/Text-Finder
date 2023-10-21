@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<!--
+  COLLABORATORS:
+  
+-->
+
+<html>
+<head>
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Word Finder</title>
+
+
+<!-- Load any supplemental Javascript libraries here -->
+<script type="text/javascript" src="jquery-1.5.min.js"></script>
+<script type="text/javascript" src="words-small.json"></script>
+
+
+<script type="text/javascript" src="words-large.json"></script>
+ 
+
+<script type="text/javascript" src="dictionary.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+// This allows the Javascript code inside this block to only run when the page
+// has finished loading in the browser.
+$(document).ready(function() {
+	var dict = new Dictionary(words);
+	// Your code here
+
+});
+
+// ]]>
+</script>
+
+<style type="text/css">
+
+/* Your CSS here */
+
+.header{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+} 
+.wrapper{
+  
+  width: 100%;
+  min-height: 100%;
+  border-radius: 5px;
+
+
+}
+.wrapper .search-input{
+  background:rgb(173, 169, 169);
+}
+.input-group{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: auto;
+}
+.search-input input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.search-input .autocom-box{
+  padding: 10px 8px; 
+  max-height: 480px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  padding-bottom: 10px;
+}
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+} 
+.autocom-box li{
+  background-color: aliceblue;
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  height: 100%;
+
+
+}
+.search-input.active .autocom-box li{
+  display: block; 
+}
+.autocom-box li:hover{
+  background: #efefef;
+}
+input{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: 100%;
+}
+button{
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+html {
+    background-color: rgb(173, 169, 169);
+}
+body{
+  padding: 0 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+  <div class="header">
+  <h1>Welcome to Text Finder </h1>
+</div>
+  <div class="wrapper">
+     <div class="search-input">
+      <div class="input-group">
+        <input type="text" placeholder="Search" >
+        <button>Clear</button>
+      </div>
+      <div class="autocom-box" id="wordlist">
+      </div>
+      <p>Total Amount of words in words-large.json file: 45,407 </p>
+      <p>Total Amount of words in words-small.json file: 852 </p>
+      </div>
+     </div>
+
+     <script type="text/javascript" src="script.js"></script>
+    
+ 
+
+<!-- Your HTML here -->
+
+</body>
+</html>
